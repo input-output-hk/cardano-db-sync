@@ -234,7 +234,6 @@ loadState stateDir ledger slotNo = do
             Left err -> panic (textShow err)
             Right ls -> pure $ Just ls
 
-
     codecConfig :: CodecConfig CardanoBlock
     codecConfig = configCodec (clsConfig ledger)
 
