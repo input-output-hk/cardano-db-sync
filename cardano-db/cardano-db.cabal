@@ -58,6 +58,7 @@ library
                       , conduit
                       , conduit-extra
                       , contra-tracer
+                      , cryptonite
                       , directory
                       , esqueleto
                       , extra
@@ -99,7 +100,6 @@ test-suite test
                         -Wincomplete-record-updates
                         -Wincomplete-uni-patterns
                         -Wunused-imports
-                        -Wunused-packages
 
   other-modules:        Test.Property.Cardano.Db.Migration
                         Test.Property.Cardano.Db.Types
@@ -134,7 +134,6 @@ test-suite test-db
                         -Wincomplete-record-updates
                         -Wincomplete-uni-patterns
                         -Wunused-imports
-                        -Wunused-packages
 
   build-depends:        base                            >= 4.14         && < 4.16
                       , bytestring
