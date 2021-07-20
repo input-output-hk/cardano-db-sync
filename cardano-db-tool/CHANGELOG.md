@@ -1,5 +1,8 @@
 # Revision history for cardano-db-tool
 
+## 10.1.0
+* Add reporting functionality (commit 8951945d4883).
+
 ## 10.0.0
 * Add helper functionality for state snapshot generation.
 

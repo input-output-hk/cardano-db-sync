@@ -1,5 +1,21 @@
 # Revision history for cardano-db-sync-extended
 
+## 10.1.0
+* The database schema for this release is forwards (but not backwards) compatible with the schema
+  for `10.0.0`. That means the database will not need to be dropped and recreated. However a
+  snapshot will be made available anyway. See `doc/state-snapshot.md`.
+* Updates for Alonzo:
+  - New fields in `param_proposal` and `epoch_params` tables.
+  - New table `collateral_tx_in` to store collateral inputs for transactions that contain scripts.
+  - New `valid_contract` field in `tx` table (commit 5d0b28961621).
+  - When `valid_contract` is `true`, the regular transaction inputs will be consumed. If `false` the
+    collateral inputs will be consumed.
+* Add an `op_cert_counter` field to the `block` table (#641).
+* Fix rolling back to first EBB and/or genesis block.
+* Recover from corrupted ledger file (#651).
+* Fix SendToOppositePotMIR insertion into `pot_transfer` table (new Alonzo feature).
+* Numerous minor performance inprovements.
+
 ## 10.0.0
 * Note that this release requires the database to be dropped and recreated. Restoring the `db-sync`
   state can take a long time so it is possible to restore it from a snapsot file.
