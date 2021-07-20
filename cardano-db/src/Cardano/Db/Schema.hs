@@ -109,6 +109,9 @@ share
 
     invalidBefore       DbWord64 Maybe      sqltype=word64type
     invalidHereafter    DbWord64 Maybe      sqltype=word64type
+    exUnitsNumber       Word64              sqltype=uinteger
+    exUnitsFees         DbLovelace          sqltype=lovelace
+    scriptsSizes        Word64              sqltype=uinteger
 
     validContract       Bool                                    -- False if the contract is invalid, True otherwise.
     UniqueTx            hash
